@@ -6,4 +6,4 @@ Fork the repository. <br>
 Think of a better feature which should be added and then Create a pull request. <br>
 If its look good to me, I will merge the same.
 
-# Happy coding, Happy Hactoberfest..
+# Happy coding, Happy Hacktoberfest..
