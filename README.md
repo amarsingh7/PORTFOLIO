@@ -1,9 +1,5 @@
 # PORTFOLIO😎
-THIS IS A DECENT LOOKING PERSONAL PORTFOLIO WEBSITE CREATED BY USING NEW TECHNOLOGIES AND FRAMEWORKS. 
+THIS IS MY DECENT LOOKING PERSONAL PORTFOLIO WEBSITE💕 
 
-# Contributing Guidelines🥰-
-Fork the repository. <br>
-Think of a better feature which should be added and then Create a pull request. <br>
-If its look good to me, I will merge the same.
-
-# Happy coding, Happy Hacktoberfest..
+Do suggest desirable changes and report bugs etc, if you find any!
+## THANK YOU✨
