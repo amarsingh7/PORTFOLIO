@@ -1,47 +1,16 @@
-# My Portfolio😎
+# flutter_portfolio_amar
 
-This is a personal portfolio website, built with React, that showcases my projects and skills.
+A new Flutter project.
 
-### 🚀 Getting Started
+## Getting Started
 
-To get a copy of this project up and running on your local machine, follow these steps:
+This project is a starting point for a Flutter application.
 
-**Prerequisites**
-*   Node.js (LTS version recommended)
-*   npm or yarn
+A few resources to get you started if this is your first Flutter project:
 
-**Installation**
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-1.  **Clone the repository**:
-    ```sh
-    git clone https://github.com/your-username/your-portfolio.git
-    cd your-portfolio
-    ```
-2.  **Install dependencies**:
-    ```sh
-    npm install
-    # or
-    yarn install
-    ```
-3.  **Run the development server**:
-    ```sh
-    npm start
-    # or
-    yarn start
-    ```
-4.  Open your browser and navigate to `http://localhost:3000` to see the site.
-
-### 🛠️ Built With
-
-*   **React**: A JavaScript library for building user interfaces.
-*   **Other technologies**: `CSS`, `Tailwind CSS` etc.
-
-### 🤝 Contributing
-
-This project is open to contributions, especially for Hacktoberfest! We welcome any improvements, bug fixes, or new features.
-
-For more details, please see our [CONTRIBUTING.md](CONTRIBUTING.md) file.
-
-### 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
