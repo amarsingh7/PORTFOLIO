@@ -1,4 +1,4 @@
-# Contributing to this React Portfolio web-app
+# Contributing to this Portfolio app
 
 Thank you for your interest in contributing to this project, especially during Hacktoberfest! All contributions are welcome and help to improve this portfolio website.
 
