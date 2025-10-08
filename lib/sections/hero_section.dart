@@ -14,7 +14,7 @@ child: const Column(
 children: [
 CircleAvatar(
 radius: 60,
-backgroundImage: AssetImage('assets/images/profile.jpg'),
+backgroundImage: AssetImage('assets/images/profile.png'),
 ),
 SizedBox(height: 20),
 Text('Hi, I\'m Amar Singh', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
