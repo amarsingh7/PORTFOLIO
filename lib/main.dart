@@ -10,58 +10,77 @@ import 'sections/blog.dart';
 import 'sections/contact.dart';
 import 'sections/footer.dart';
 import 'widgets/navigation.dart';
-
+import 'widgets/fade_in_section.dart';
 
 void main() => runApp(const PortfolioApp());
 
-
 class PortfolioApp extends StatelessWidget {
-const PortfolioApp({super.key});
+  const PortfolioApp({super.key});
 
-
-@override
-Widget build(BuildContext context) {
-return MaterialApp(
-debugShowCheckedModeBanner: false,
-title: 'Amar Singh | Portfolio',
-theme: ThemeData(
-textTheme: GoogleFonts.poppinsTextTheme(),
-colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
-useMaterial3: true,
-),
-home: const PortfolioHome(),
-);
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Amar Singh | Portfolio',
+      theme: ThemeData(
+        textTheme: GoogleFonts.poppinsTextTheme(),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+        useMaterial3: true,
+      ),
+      home: const PortfolioHome(),
+    );
+  }
 }
+
+class PortfolioHome extends StatefulWidget {
+  const PortfolioHome({super.key});
+
+  @override
+  State<PortfolioHome> createState() => _PortfolioHomeState();
 }
 
+class _PortfolioHomeState extends State<PortfolioHome> {
+  late final ScrollController _scrollController;
 
-class PortfolioHome extends StatelessWidget {
-const PortfolioHome({super.key});
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
 
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
-@override
-Widget build(BuildContext context) {
-return Scaffold(
-appBar: const PreferredSize(
-preferredSize: Size.fromHeight(60),
-child: PortfolioNavBar(),
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(60),
+        child: PortfolioNavBar(),
+      ),
+      body: PrimaryScrollController(
+        controller: _scrollController,
+        child: SingleChildScrollView(
+          controller: _scrollController,
+          child: Column(
+            children: const [
+              FadeInSection(child: HeroSection()),
+              FadeInSection(child: AboutSection()),
+              FadeInSection(child: ResumeSection()),
+              FadeInSection(child: ServicesSection()),
+              FadeInSection(child: SkillsSection()),
+              ProjectsSection(),
+              FadeInSection(child: BlogSection()),
+              FadeInSection(child: ContactSection()),
+              FadeInSection(child: FooterSection()),
+            ],
+          ),
+  ),
 ),
-drawer: const PortfolioDrawer(),
-body: SingleChildScrollView(
-child: Column(
-children: const [
-HeroSection(),
-AboutSection(),
-ResumeSection(),
-ServicesSection(),
-SkillsSection(),
-ProjectsSection(),
-BlogSection(),
-ContactSection(),
-FooterSection(),
-],
-),
-),
-);
-}
+
+    );
+  }
 }
