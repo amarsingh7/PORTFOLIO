@@ -1,38 +1,46 @@
 import 'package:flutter/material.dart';
-import '../widgets/animated_skill_bar.dart';
-import '../widgets/fade_in_section.dart';
+import '../widgets/skill_bar.dart';
 
 class SkillsSection extends StatelessWidget {
   const SkillsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final skills = [
-      {'name': 'C', 'percent': 95.0, 'color': Colors.blue},
-      {'name': 'C++', 'percent': 85.0, 'color': Colors.indigo},
-      {'name': 'HTML5', 'percent': 92.0, 'color': Colors.orange},
-      {'name': 'CSS3', 'percent': 90.0, 'color': Colors.blueAccent},
-      {'name': 'JavaScript', 'percent': 70.0, 'color': Colors.yellow.shade700},
-      {'name': 'React', 'percent': 80.0, 'color': Colors.lightBlue},
-      {'name': 'Git/GitHub', 'percent': 95.0, 'color': Colors.black},
-    ];
+    final isMobile = MediaQuery.of(context).size.width < 600;
 
-    return FadeInSection(
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
-        constraints: const BoxConstraints(maxWidth: 600), // compact width
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('My Skills 💡',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 16),
-            ...skills.map((skill) => AnimatedSkillBar(
-                  skill: skill['name'] as String,
-                  percentage: skill['percent'] as double,
-                  color: skill['color'] as Color,
-                )),
-          ],
+    return Container(
+      color: Colors.black87,
+      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 900),
+          child: Column(
+            crossAxisAlignment:
+                isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+            children: [
+              const Text(
+                "My Skills 💡",
+                style: TextStyle(
+                    fontSize: 28, fontWeight: FontWeight.bold, color: Colors.greenAccent),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 16),
+              Wrap(
+                spacing: 20,
+                runSpacing: 16,
+                alignment: isMobile ? WrapAlignment.center : WrapAlignment.start,
+                children: const [
+                  SkillBar(skill: "C", percentage: 0.95),
+                  SkillBar(skill: "C++", percentage: 0.85),
+                  SkillBar(skill: "HTML5", percentage: 0.92),
+                  SkillBar(skill: "CSS3", percentage: 0.90),
+                  SkillBar(skill: "JavaScript", percentage: 0.70),
+                  SkillBar(skill: "React", percentage: 0.80),
+                  SkillBar(skill: "Git/GitHub", percentage: 0.90),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
