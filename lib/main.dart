@@ -71,7 +71,7 @@ class _PortfolioHomeState extends State<PortfolioHome> {
               FadeInSection(child: AboutSection()),
               FadeInSection(child: ResumeSection()),
               FadeInSection(child: ServicesSection()),
-              FadeInSection(child: SkillsSection()),
+              // FadeInSection(child: SkillsSection()),
               ProjectsSection(),
               FadeInSection(child: BlogSection()),
               FadeInSection(child: ContactSection()),
