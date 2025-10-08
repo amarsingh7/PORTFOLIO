@@ -1,44 +1,37 @@
 import 'package:flutter/material.dart';
 
-
 class PortfolioNavBar extends StatelessWidget {
-const PortfolioNavBar({super.key});
+  const PortfolioNavBar({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    final scrollController =
+        PrimaryScrollController.of(context); // smooth scroll link
+    final sections = {
+      'Home': 0,
+      'About': 1,
+      'Projects': 2,
+      'Contact': 3,
+    };
 
-@override
-Widget build(BuildContext context) {
-return AppBar(
-title: const Text('Amar Singh'),
-centerTitle: true,
-actions: [
-TextButton(onPressed: () {}, child: const Text('About')),
-TextButton(onPressed: () {}, child: const Text('Projects')),
-TextButton(onPressed: () {}, child: const Text('Contact')),
-],
-);
-}
-}
-
-
-class PortfolioDrawer extends StatelessWidget {
-const PortfolioDrawer({super.key});
-
-
-@override
-Widget build(BuildContext context) {
-return Drawer(
-child: ListView(
-padding: EdgeInsets.zero,
-children: const [
-DrawerHeader(
-decoration: BoxDecoration(color: Colors.indigo),
-child: Text('Amar Singh Portfolio', style: TextStyle(color: Colors.white)),
-),
-ListTile(title: Text('About')),
-ListTile(title: Text('Projects')),
-ListTile(title: Text('Contact')),
-],
-),
-);
-}
+    return AppBar(
+      title: const Text('Amar Singh'),
+      backgroundColor: Colors.white,
+      elevation: 2,
+      actions: [
+        for (var entry in sections.entries)
+          TextButton(
+            onPressed: () {
+              // smooth scroll to section
+              scrollController.animateTo(
+                entry.value * 600, // rough offset for section height
+                duration: const Duration(milliseconds: 800),
+                curve: Curves.easeOutCubic,
+              );
+            },
+            child: Text(entry.key, style: const TextStyle(color: Colors.black)),
+          ),
+      ],
+    );
+  }
 }
