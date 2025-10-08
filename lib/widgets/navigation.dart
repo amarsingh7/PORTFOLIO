@@ -16,7 +16,7 @@ class PortfolioNavBar extends StatelessWidget {
 
     return AppBar(
       title: const Text('Amar Singh'),
-      backgroundColor: Colors.white,
+      backgroundColor: const Color.fromARGB(255, 248, 70, 156),
       elevation: 2,
       actions: [
         for (var entry in sections.entries)
